@@ -1,7 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import './Registration.css';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import axios from 'axios';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -14,17 +21,11 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import Person3Icon from '@mui/icons-material/Person3';
 import PasswordIcon from '@mui/icons-material/Password';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import { BASE_URL } from './config';
 
 const RegistrationForm = () => {
     const navigate = useNavigate();
+
     const inputWidth = '20vw';
     const inputHeight = '48px';
 
@@ -47,6 +48,7 @@ const RegistrationForm = () => {
         Location: '',
         Image: null,
     });
+
     const validateEmpId = (empId) => {
         return empId.trim() !== '';
     };
@@ -567,6 +569,8 @@ const RegistrationForm = () => {
                 </form>
             </fieldset>
         </div>
-    )
-}
+    );
+};
+
 export default RegistrationForm;
+
